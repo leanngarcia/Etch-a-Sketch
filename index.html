@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etch-and-Sketch</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
     <h1 class="title">Etch-and-Sketch</h1>
+
+    <div class="sizeSection">
+      <h2 id="containerSize">Select grid size</h2>
+      <label for="size">Grid Size</label>
+      <select name="grid-size" id="size">
+        <option class="option-size" value="64" selected>64 x 64</option>
+        <option class="option-size" value="32">32 x 32</option>
+        <option class="option-size" value="16">16 x 16</option>
+      </select>
+    </div>
+
     <div id="containerGrid"></div>
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>

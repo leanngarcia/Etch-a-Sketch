@@ -13,19 +13,19 @@
 #containerGrid {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  border: 2px solid black;
-  width: 80vh;
-  height: 80vh;
+  border: 1px solid black;
+  width: 800px;
+  height: 800px;
   margin: auto;
 }
 
-.row-grid{
-   border: 1px solid black;
-   display: flex;
+.row-grid {
+  border: 1px solid black;
+  display: flex;
+  flex-grow: 1;
 }
 
-.col-grid{
-    border: 1px solid black;
-    justify-content: space-between;
+.col-grid {
+  border: 1px solid black;
+  flex-grow: 1;
 }
