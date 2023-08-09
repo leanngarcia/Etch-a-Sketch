@@ -29,3 +29,14 @@
   border: 1px solid black;
   flex-grow: 1;
 }
+
+.config-div {
+  display: flex;
+  justify-content: center;
+  margin: 5vh;
+}
+
+.config-brush,
+.config-size {
+  margin: 0 5vh;
+}

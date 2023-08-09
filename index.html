@@ -9,14 +9,24 @@
   <body>
     <h1 class="title">Etch-and-Sketch</h1>
 
-    <div class="sizeSection">
-      <h2 id="containerSize">Select grid size</h2>
-      <label for="size">Grid Size</label>
-      <select name="grid-size" id="size">
-        <option class="option-size" value="64" selected>64 x 64</option>
-        <option class="option-size" value="32">32 x 32</option>
-        <option class="option-size" value="16">16 x 16</option>
-      </select>
+    <div class="config-div">
+
+      <div class="config-size">
+        <h2 id="containerSize">Select grid size</h2>
+        <label for="size">Grid Size</label>
+        <select name="grid-size" id="size">
+          <option class="option-size" value="64" selected>64 x 64</option>
+          <option class="option-size" value="32">32 x 32</option>
+          <option class="option-size" value="16">16 x 16</option>
+          <option class="option-size" value="8">8 x 8</option>
+        </select>
+      </div>
+
+      <div class="config-brush">
+        <h2>Select brush</h2>
+        <button id="btnBlack">Black</button>
+      </div>
+
     </div>
 
     <div id="containerGrid"></div>
