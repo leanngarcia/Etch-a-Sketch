@@ -1,7 +1,7 @@
 const gridContainer = document.getElementById("gridContainer");
 const optionSize = document.getElementById("size");
-const gridUnit = document.getElementsByClassName("grid-unit");
 const btnBlack = document.getElementById("btnBlack");
+const gridUnit = document.getElementsByClassName("grid-unit");
 let isDrawing = false;
 
 let sizeGrid = 64;
@@ -9,40 +9,14 @@ let sizeGrid = 64;
 drawGrid(sizeGrid);
 
 //add event to resize grid at select list
-optionSize.addEventListener("change", (event) => {
+optionSize.addEventListener("change", (e) => {
   deleteGrid(gridContainer);
 
-  sizeGrid = event.target.value;
+  sizeGrid = e.target.value;
 
   drawGrid(sizeGrid);
 });
 
-gridContainer.addEventListener("mousedown", () => {
-  isDrawing = true;
-  console.log(isDrawing);
-});
-
-gridContainer.addEventListener("mouseup", () => {
-  isDrawing = false;
-  console.log(isDrawing);
-});
-
-gridContainer.addEventListener("mouseleave", () => {
-  isDrawing = false;
-  console.log(isDrawing);
-});
-
-for (const unit of gridUnit) {
-  unit.addEventListener("mouseover", (e) => {
-    if (!isDrawing) {
-      return;
-    }
-
-    e.target.style.backgroundColor = "black";
-  });
-}
-
-//draw grid at specific size
 function drawGrid(sizeGrid) {
   for (let i = 0; i < sizeGrid; i++) {
     const rowGrid = document.createElement("div");
@@ -59,6 +33,32 @@ function drawGrid(sizeGrid) {
 
       rowGrid.appendChild(colGrid);
     }
+  }
+
+  //create events for coloring the divs
+  gridContainer.addEventListener("mousedown", () => {
+    isDrawing = true;
+    console.log(isDrawing);
+  });
+
+  gridContainer.addEventListener("mouseup", () => {
+    isDrawing = false;
+    console.log(isDrawing);
+  });
+
+  gridContainer.addEventListener("mouseleave", () => {
+    isDrawing = false;
+    console.log(isDrawing);
+  });
+
+  for (const unit of gridUnit) {
+    unit.addEventListener("pointerdown", (e) => {
+      e.target.style.backgroundColor = "black";
+    });
+
+    unit.addEventListener("mouseover", (e) => {
+      if (isDrawing) e.target.style.backgroundColor = "black";
+    });
   }
 }
 
